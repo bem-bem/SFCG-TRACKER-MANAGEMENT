@@ -31,7 +31,6 @@ return new class extends Migration
             $table->dateTime('created_at');
             $table->string('purpose' ,30);
             $table->string('temperature' ,10);
-            $table->string('vaccine_type' , 25);
             $table->unsignedInteger('person_id')->index();
             $table->foreign('person_id')->references('id')->on('people')->onDelete('cascade')->onUpdate('cascade');
         });

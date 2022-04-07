@@ -1,11 +1,15 @@
 <div class="card shadow">
-  <div class="card-header">Register A new Student here</div>
+  <div class="card-header">Register A new person here</div>
       <div class="card-body">
+        {{-- preview image --}}
+        @include('partials._preview_image')
+        {{-- preview image --}}
+
         {{-- input fields --}}
         <div class="row mb-4">
           <div class="col-md-3 mb-3">
             <label for="input-1" class="form-label">Last name</label>
-            <input type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror" value="{{ old('last_name' , optional($student ?? null)->last_name) }}" id="input-1">
+            <input type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror" value="{{ old('last_name' , optional($person ?? null)->last_name) }}" id="input-1">
             @error('last_name')
             <span class="invalid-feedback fw-bolder" role="alert">
                 {{ $message }}
@@ -14,7 +18,7 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="input-2" class="form-label">First name</label>
-            <input type="text" name="first_name" class="form-control  @error('first_name') is-invalid @enderror" value="{{ old('first_name' , optional($student ?? null)->first_name) }}" id="input-2">
+            <input type="text" name="first_name" class="form-control  @error('first_name') is-invalid @enderror" value="{{ old('first_name' , optional($person ?? null)->first_name) }}" id="input-2">
             @error('first_name')
             <span class="invalid-feedback fw-bolder" role="alert">
                 {{ $message }}
@@ -23,7 +27,7 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="input-3" class="form-label">Middle name</label>
-            <input type="text" name="middle_name" class="form-control @error('middle_name') is-invalid @enderror" value="{{ old('middle_name' , optional($student ?? null)->middle_name) }}" id="input-3">
+            <input type="text" name="middle_name" class="form-control @error('middle_name') is-invalid @enderror" value="{{ old('middle_name' , optional($person ?? null)->middle_name) }}" id="input-3">
             @error('middle_name')
             <span class="invalid-feedback fw-bolder" role="alert">
                 {{ $message }}
@@ -32,7 +36,7 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="input-3" class="form-label">Contact number</label>
-            <input type="text" name="contact_number" class="form-control @error('contact_number') is-invalid @enderror" value="{{ old('contact_number' , optional($student ?? null)->contact_number) }}" id="input-3">
+            <input type="text" name="contact_number" class="form-control @error('contact_number') is-invalid @enderror" value="{{ old('contact_number' , optional($person ?? null)->contact_number) }}" id="input-3">
             @error('contact_number')
             <span class="invalid-feedback fw-bolder" role="alert">
                 {{ $message }}
@@ -44,7 +48,7 @@
         <div class="row mb-4">
           <div class="col-md-4 mb-3">
             <label for="input-4" class="form-label">Barrangay</label>
-            <input name="brgy" class="form-control @error('brgy') is-invalid @enderror" value="{{ old('brgy' , optional($student ?? null)->brgy) }}" id="input-4" list="datalistBrgy" id="input-4" placeholder="Type to search...">
+            <input name="brgy" class="form-control @error('brgy') is-invalid @enderror" value="{{ old('brgy' , optional($person ?? null)->brgy) }}" id="input-4" list="datalistBrgy" id="input-4" placeholder="Type to search...">
             <datalist id="datalistBrgy">
                 @foreach (brgys() as $brgy)
                 <option value="{{ $brgy }}">
@@ -58,7 +62,7 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="input-5" class="form-label">Municipality</label>
-            <input name="municipality" class="form-control @error('municipality') is-invalid @enderror" value="{{ old('municipality' , optional($student ?? null)->municipality) }}" id="input-4" list="datalistMunicipality" id="input-5" placeholder="Type to search...">
+            <input name="municipality" class="form-control @error('municipality') is-invalid @enderror" value="{{ old('municipality' , optional($person ?? null)->municipality) }}" id="input-4" list="datalistMunicipality" id="input-5" placeholder="Type to search...">
             <datalist id="datalistMunicipality">
                 @foreach (municipalitys() as $municipality)
                 <option value="{{ $municipality }}">
@@ -72,7 +76,7 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="input-6" class="form-label">Province</label>
-            <input name="province" class="form-control @error('province') is-invalid @enderror" value="{{ old('province' , optional($student ?? null)->province) }}" id="input-4" list="datalistProvince" id="input-6" placeholder="Type to search...">
+            <input name="province" class="form-control @error('province') is-invalid @enderror" value="{{ old('province' , optional($person ?? null)->province) }}" id="input-4" list="datalistProvince" id="input-6" placeholder="Type to search...">
             <datalist id="datalistProvince">
                 @foreach (provinces() as $province)
                 <option value="{{ $province }}">
@@ -91,7 +95,7 @@
               <label for="input-7" class="form-label">Department</label>
               <select name="department" class="form-select @error('department') is-invalid @enderror" id="input-7">
                 <option selected disabled >Open this select menu</option>
-                @if ($oldDepartment = old('department' , optional($student ?? null)->department))
+                @if ($oldDepartment = old('department' , optional($person ?? null)->department))
                 <option selected>{{ $oldDepartment }}</option>
                 @endif
                     @foreach (departments() as $department)
@@ -108,7 +112,7 @@
               <label for="input-8" class="form-label">Grade level</label>
               <select name="grade_level" class="form-select @error('grade_level') is-invalid @enderror" id="input-8">
                 <option selected disabled>Open this select menu</option>
-                @if ($oldGradeLevel = old('grade_level' , optional($student ?? null)->grade_level))
+                @if ($oldGradeLevel = old('grade_level' , optional($person ?? null)->grade_level))
                 <option selected>{{ $oldGradeLevel }}</option>
                 @endif
                     @foreach (grade_levels() as $grade_level)
@@ -123,7 +127,7 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="input-9" class="form-label">Section</label>
-            <input type="text" name="section" class="form-control @error('section') is-invalid @enderror" value="{{ old('section' , optional($student ?? null)->section) }}" id="input-9">
+            <input type="text" name="section" class="form-control @error('section') is-invalid @enderror" value="{{ old('section' , optional($person ?? null)->section) }}" id="input-9">
             @error('section')
             <span class="invalid-feedback fw-bolder" role="alert">
                 {{ $message }}
@@ -134,8 +138,8 @@
     
         <div class="row mb-4">
           <div class="col-md-4 mb-3">
-            <label for="input-10" class="form-label">Vaccine card image</label>
-            <input type="file" name="vaccine_card_image" class="form-control  @error('vaccine_card_image') is-invalid @enderror" id="input-10">
+            <label for="file-ip-2" class="form-label">Vaccine card image</label>
+            <input type="file" name="vaccine_card_image" class="form-control  @error('vaccine_card_image') is-invalid @enderror" id="file-ip-2" accept="image/*" onchange="showPreview2(event);">
             @error('vaccine_card_image')
             <span class="invalid-feedback fw-bolder" role="alert">
                 {{ $message }}
@@ -143,8 +147,8 @@
             @enderror
           </div>
           <div class="col-md-4 mb-3">
-            <label for="input-11" class="form-label">2*2 Image</label>
-            <input type="file" name="person_image" class="form-control @error('person_image') is-invalid @enderror" id="input-11">
+            <label for="file-ip-1" class="form-label">2*2 Image</label>
+            <input type="file" name="person_image" class="form-control @error('person_image') is-invalid @enderror" id="file-ip-1" accept="image/*" onchange="showPreview1(event);">
             @error('person_image')
             <span class="invalid-feedback fw-bolder" role="alert">
                 {{ $message }}
@@ -153,7 +157,7 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="input-12" class="form-label">ID number</label>
-            <input type="number" name="id_number" class="form-control  @error('id_number') is-invalid @enderror" value="{{ old('id_number' , optional($student ?? null)->id_number) }}" id="input-12">
+            <input type="text" name="id_number" class="form-control  @error('id_number') is-invalid @enderror" value="{{ old('id_number' , optional($person ?? null)->id_number) }}" id="input-12">
             @error('id_number')
             <span class="invalid-feedback fw-bolder" role="alert">
                 {{ $message }}

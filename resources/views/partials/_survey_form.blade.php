@@ -1,15 +1,30 @@
 <div class="row">
   <div class="col-md-4 mb-3">
     <label for="input-1" class="form-label">Purpose</label>
-    <input type="text" name="purpose" class="form-control @error('purpose') is-invalid @enderror" id="input-1">
+    <input type="text" name="purpose" value="{{ old('purpose') }}" class="form-control @error('purpose') is-invalid @enderror" id="input-1">
+    @error('purpose')
+    <span class="invalid-feedback fw-bolder" role="alert">
+        {{ $message }}
+    </span>
+    @enderror
   </div>
   <div class="col-md-4 mb-3">
     <label for="input-2" class="form-label">Date / Time</label>
-    <input type="datetime-local" name="created_at" class="form-control @error('created_at') is-invalid @enderror" id="input-2">
+    <input type="datetime-local" name="created_at" value="{{ old('created_at') }}" class="form-control @error('created_at') is-invalid @enderror" id="input-2">
+    @error('created_at')
+    <span class="invalid-feedback fw-bolder" role="alert">
+        {{ $message }}
+    </span>
+    @enderror
   </div>
   <div class="col-md-4 mb-3">
     <label for="input-3" class="form-label">Temparature</label>
-    <input type="text" name="temperature" class="form-control @error('temperature') is-invalid @enderror" id="input-3">
+    <input type="text" name="temperature" value="{{ old('temperature') }}" class="form-control @error('temperature') is-invalid @enderror" id="input-3">
+    @error('temperature')
+    <span class="invalid-feedback fw-bolder" role="alert">
+        {{ $message }}
+    </span>
+    @enderror
   </div>
 </div>
 
@@ -101,7 +116,7 @@
         </div>
 
         <div class="form-check">
-          <input class="form-check-input cb" type="checkbox" name="soret_hroat" value="Sorethroat" id="flexCheckDefault11">
+          <input class="form-check-input cb" type="checkbox" name="sorethroat" value="Sorethroat" id="flexCheckDefault11">
           <label class="form-check-label" for="flexCheckDefault11">
               Sore Throat
           </label>
@@ -123,8 +138,13 @@
 <div class="row justify-content-center mt-3">
   <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="form-floating">
-          <textarea class="form-control {{ $errors->has('other_symptoms') ? 'is-invalid':'' }}" name="other_symptoms" id="floatingTextarea">{{ old('other_symptoms') }}</textarea>
+          <textarea name="other_symptoms" class="form-control @error('other_symptoms') is-invalid @enderror" id="floatingTextarea">{{ old('other_symptoms') }}</textarea>
           <label for="floatingTextarea">Other symptoms : </label>
+          @error('other_symptoms')
+          <span class="invalid-feedback fw-bolder" role="alert">
+              {{ $message }}
+          </span>
+          @enderror
         </div>
   </div>
 </div>

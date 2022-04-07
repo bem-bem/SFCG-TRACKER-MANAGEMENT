@@ -20,4 +20,14 @@ class Person extends Model
     {
         return $this->hasOne(PersonImage::class);
     }
+
+    public function vaccineImage()
+    {
+        return $this->hasOne(VaccineImage::class);
+    }
+
+    public function survey()
+    {
+        return $this->hasMany(Survey::class);
+    }
 }
