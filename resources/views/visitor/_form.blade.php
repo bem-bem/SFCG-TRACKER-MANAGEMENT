@@ -1,5 +1,5 @@
 <div class="card shadow">
-  <div class="card-header">Register A new Visitor here</div>
+  <div class="card-header fw-bolder">Visitor form</div>
       <div class="card-body">
         {{-- preview image --}}
         @include('partials._preview_image')
@@ -104,6 +104,15 @@
             <label for="file-ip-1" class="form-label">2*2 Image</label>
             <input type="file" name="person_image" class="form-control @error('person_image') is-invalid @enderror" id="file-ip-1" accept="image/*" onchange="showPreview1(event);">
             @error('person_image')
+            <span class="invalid-feedback fw-bolder" role="alert">
+                {{ $message }}
+            </span>
+            @enderror
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="input-12" class="form-label">Visitor ID number</label>
+            <input type="text" name="id_number" class="form-control  @error('id_number') is-invalid @enderror" value="{{ old('id_number' , optional($person ?? null)->id_number) }}" id="input-12">
+            @error('id_number')
             <span class="invalid-feedback fw-bolder" role="alert">
                 {{ $message }}
             </span>

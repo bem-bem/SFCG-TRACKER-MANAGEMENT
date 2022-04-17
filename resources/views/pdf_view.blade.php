@@ -49,15 +49,12 @@
   <article>
     <div>
       <img src="{{ $personPic }}" alt=".." style="height: 51mm; width:51mm;">
-    <img src="{{ $vaccinePic }}" alt=".." style="height: 51mm; width:51mm;">
+    <img src="{{ $vaccinePic }}" alt=".." style="width: 5in; height: 3in;"
     </div>
     <p><strong>Name :</strong> {{ $person->last_name }} {{ $person->first_name }} . {{ $person->middle_name }} </p>
     <p><strong>Category :</strong> {{ $person->category }} </p>
-    @if ($person->category == 'visitor')
 
-    @else
     <p><strong>ID number :</strong> {{ $person->id_number }} </p>
-    @endif
 
     <p><strong>Contact Number :</strong> {{ $person->contact_number }} </p>
     <p><strong>Address :</strong> {{ $person->brgy }} {{ $person->municipality }} . {{ $person->province }}</p>

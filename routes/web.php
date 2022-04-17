@@ -33,6 +33,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('about', function () {
+    return view('about');
+});
+
 Route::resource('people', PersonController::class);
 
 Auth::routes();

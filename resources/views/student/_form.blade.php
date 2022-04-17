@@ -1,5 +1,5 @@
 <div class="card shadow">
-  <div class="card-header">Register A new person here</div>
+  <div class="card-header fw-bolder">Student form</div>
       <div class="card-body">
         {{-- preview image --}}
         @include('partials._preview_image')

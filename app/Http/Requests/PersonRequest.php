@@ -25,9 +25,9 @@ class PersonRequest extends FormRequest
     {
         return [
             'category' => 'required',
-            'last_name' => 'required|string|max:30',
-            'first_name' => 'required|string|max:40',
-            'middle_name' => 'required|string|max:30',
+            'last_name' => 'required|string|max:30|alpha_spaces',
+            'first_name' => 'required|string|max:40|alpha_spaces',
+            'middle_name' => 'required|string|max:30|alpha_spaces',
             'brgy' => 'required',
             'municipality' => 'required',
             'province' => 'required',
@@ -38,7 +38,7 @@ class PersonRequest extends FormRequest
             'contact_number' => 'required|string|max:11',
             'vaccine_card_image' => request()->isMethod('put') ? 'nullable|image'  : 'required|image',
             'person_image' => request()->isMethod('put') ? 'nullable|image'  : 'required|image',
-            'id_number' => 'required_unless:category,visitor|string|max:9',
+            'id_number' => 'required|string|max:9',
         ];
     }
 }

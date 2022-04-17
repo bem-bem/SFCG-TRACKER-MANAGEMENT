@@ -144,6 +144,15 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'last_name' => [
+            'alpha_spaces' => 'last name may only contain letters and spaces.',
+        ],
+        'first_name' => [
+            'alpha_spaces' => 'first name may only contain letters and spaces.',
+        ],
+        'middle_name' => [
+            'alpha_spaces' => 'middle name may only contain letters and spaces.',
+        ],
     ],
 
     /*

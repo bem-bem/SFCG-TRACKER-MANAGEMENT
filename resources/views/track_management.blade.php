@@ -43,7 +43,7 @@
                       <form action="{{ route('search.id_number') }}" method="get">
                         <div class="input-group mb-3">
                           <input type="search" name="id_number_table" class="form-control" required placeholder="Search ID number....">
-                          <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                          <button class="btn btn-outline-primary" type="submit" id="button-addon2">Search</button>
                         </div>
                       </form>
                     </div>
@@ -55,15 +55,15 @@
                         <caption>{{ $persons->links() }}</caption>
                         <thead>
                           <tr>
-                            <th scope="col">ID number</th>
-                            <th scope="col">First name</th>
-                            <th scope="col">Last name</th>
-                            <th scope="col">Middle name</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Added by</th>
-                            <th scope="col">Update</th>
-                            <th scope="col">Delete</th>
-                            <th scope="col">View</th>
+                            <th scope="col" class="fw-bold">ID number</th>
+                            <th scope="col" class="fw-bold">First name</th>
+                            <th scope="col" class="fw-bold">Last name</th>
+                            <th scope="col" class="fw-bold">Middle name</th>
+                            <th scope="col" class="fw-bold">Category</th>
+                            <th scope="col" class="fw-bold">Added by</th>
+                            <th scope="col" class="fw-bold">Update</th>
+                            <th scope="col" class="fw-bold">Delete</th>
+                            <th scope="col" class="fw-bold">View</th>
                           </tr>
                         </thead>
                         <tbody>
