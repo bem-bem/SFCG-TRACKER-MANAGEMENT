@@ -8,37 +8,50 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Track Management</div>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-md-6">
-                      
-                        <div class="btn-group-vertical">
-
-                          <form action="{{ route('search.category') }}" method="get">
-                            <input type="hidden" name="student" value="student">
-                            <button type="submit" class="btn btn-outline-primary btn-sm">
-                              student <span class="badge bg-secondary">{{ student() }}</span>
-                            </button>
-                            </form>
-
-                            <form action="{{ route('search.category') }}" method="get">
-                              <input type="hidden" name="staff" value="staff">
+                <div class="card-header">
+                  
+                   <div class="row">
+                     <div class="col-md-6 mb-4">
+                      <ul class="nav nav-pills card-header-pills mx-auto">
+                        <form action="{{ route('search.category') }}">
+                        <li class="nav-item me-3">
+                          <input type="hidden" name="student" value="student">
                               <button type="submit" class="btn btn-outline-primary btn-sm">
-                                staff <span class="badge bg-secondary">{{ staff() }}</span>
+                                STUDENT <span class="badge bg-secondary">{{ student() }}</span>
                               </button>
-                              </form>
-
-                              <form action="{{ route('search.category') }}" method="get">
-                                <input type="hidden" name="visitor" value="visitor">
-                                <button type="submit" class="btn btn-outline-primary btn-sm">
-                                  visitor <span class="badge bg-secondary">{{ visitor() }}</span>
-                                </button>
-                                </form>
+                        </li>
+                        </form>
+                        <form action="{{ route('search.category') }}">
+                        <li class="nav-item me-3">
+                          <input type="hidden" name="staff" value="staff">
+                              <button type="submit" class="btn btn-outline-primary btn-sm">
+                                STAFF <span class="badge bg-secondary">{{ staff() }}</span>
+                              </button>
+                        </li>
+                        </form>
+                        <form action="{{ route('search.category') }}">
+                        <li class="nav-item me-3">
+                          <input type="hidden" name="visitor" value="visitor">
+                              <button type="submit" class="btn btn-outline-primary btn-sm">
+                                VISITOR <span class="badge bg-secondary">{{ visitor() }}</span>
+                              </button>
+                        </li>
+                        </form>
+                      </ul>
+                     
+                     </div>
+                     <div class="col-md-6">
+                      <form action="{{ route('search.id_number') }}" method="get">
+                        <div class="input-group mb-3">
+                          <input type="search" name="id_number_table" class="form-control" required placeholder="Search ID number....">
+                          <button class="btn btn-outline-primary" type="submit" id="button-addon2">Search</button>
                         </div>
-                      {{-- <input type="submit" name="staff" value="staff" class="btn btn-secondary">
-                      <input type="submit" name="visitor" value="visitor" class="btn btn-success"> --}}
-                    </div>
+                      </form>
+                     </div>
+                   </div>
+                </div>
+                <G class="card-body">
+                  {{-- <G class="row">
                     <div class="col-sm-6">
                       <form action="{{ route('search.id_number') }}" method="get">
                         <div class="input-group mb-3">
@@ -47,8 +60,8 @@
                         </div>
                       </form>
                     </div>
-                  </div>
-                </div>
+                  </G>
+                </G> --}}
                   <div class="card-body">
                     <div class="table-responsive">
                       <table class="table">
